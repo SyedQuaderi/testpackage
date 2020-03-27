@@ -1,0 +1,160 @@
+
+// Philips TV height (1920 X 1080) 
+
+$philips-tv-height: 1080;
+
+
+// Care Plan Colors 
+
+$care-plan-bg : #ffffff;
+
+$font-color: #bfbfbf;
+
+$primary-color: transparent;
+
+$primary-color-active: #087BA5;
+
+$primary-color : #fff;
+
+$care-plan-background-color: transparent;
+
+$care-plan-icon-color: #bfbfbf;
+
+$care-plan-button-color: rgba(255,255,255,.7);
+
+$care-plan-focus-color: #098dbd;
+
+$care-plan-arrow-color: #000;
+
+$care-plan-font-color: $care-plan-icon-color;
+
+$care-plan-CockPitPro: $philips-tv-height;
+
+$care-plan-Cockpit18-height: 900;
+
+$care-plan-Cockpit12-height: 767;
+
+$care-pan-activity-card-bg: #4e4e4e;
+
+$care-plan-activity-card-font-color: #a8acad;
+
+$care-plan-goals-border-color: #273f48;
+
+$care-plan-goals-bg-color: $care-plan-goals-border-color;
+
+// Home Page Colors
+
+$home-page-icons-color: #717171;
+
+$home-page-menu-background-color: rgba(0, 0, 0, 0.50);
+
+$hp-menu-items-border-color : #000;
+
+$hp-menu-items-bg-color: #000;
+
+$hp-menu-items-font-color: #d3d3d3;
+
+$hp-menu-items-focus-color: #6ec5fc;
+
+$hp-main-menu-item-icons-color: #307aa9;
+
+$hp-main-menu-section-bg-color: #f0f0f0;
+
+$hp-menu-icons-color: $home-page-icons-color ;
+
+$hp-sub-menu-item-color: $hp-menu-items-font-color;
+
+$hp-font-color: $hp-menu-items-font-color;
+
+// Slick Colors 
+
+$slider-slick-color: #e67e22;
+
+// Television
+
+$tv-menu-items-bg-color : #fff;
+$tv-menu-items-color: #000;
+$volume-controler-bg-color: #4e4e4e;
+$volume-controler-color: #fff;
+
+// Meal Ordering App 
+$mealorder-font-color: #fff;
+
+$primary-color-active: #087BA5;
+$background: #455A64;
+$sessions-font-color: #fff;
+$session-times-bg-color: rgba(255, 255, 255, 0.16);
+$session-times-border-color: rgba(255, 255, 255, 0.18);
+$text-on-light: #212121;
+$text-on-dark: #BFBFBF;
+$text-on-dark-secondary: #95989A;
+$text-on-dark-tertiary: #A8ACAD;
+$session-item-border-color: #efeee6;
+$session-item-box-shd: rgba(0, 0, 0, 0.1);
+$session-subtitle-color: rgba(255,255,255,0.7);
+$session-time-color: rgba(255,255,255,0.55);
+$session-act-box-shadow: rgba(0,0,0,.7);
+$session-act-bg-color: $session-act-box-shadow;
+$session-act-font-color: #212121;
+$session-btn-bg-color: rgba(255,255,255,0.16);
+$session-btn-border-color: rgba(255,255,255,0.18);
+$session-btn-shadow-color: rgba(0,0,0,0.1);
+//circle-variant-color
+$primary: #dc3545;
+$orange: #fd7e14;
+$blue: #007bff;
+
+//Scroll arrows
+$scroll-section-border-color: #ffffff;
+$scroll-gradient-color: rgba(0, 0, 0, 0.2);
+
+$font-family-thin: 'Roboto-Thin', Helvetica, Arial, sans-serif;
+$font-family-Light: 'Roboto-Light', Helvetica, Arial, sans-serif;
+$font-family-Medium: 'Roboto-Medium', Helvetica, Arial, sans-serif;
+$font-family-Regular: 'Roboto', Helvetica, Arial, sans-serif;
+
+$indicator-color-core: #42E58D;
+// Meal Order Page
+$order-panel-background-color: #F0F0F0;
+$meal-session-panel-bg: rgba(255, 255, 255, 0.7);
+$focus-active-color: #098dbd;
+$menu-category-border-color: #ddd;
+$meal-nutrients-color: #666666;
+$gluten-free-color: #d68e0b; 
+$halal-color: #269826;
+$vegan-color: #2db67c;
+$vegeterian-color: #2db92d;
+$meal-order-section-border-color: #c7c1c1;
+$diet-specification: green;
+$food-allergy: #d81a3f;
+$food-preference: rgba(0, 0, 0, 0.16);
+$foo-preference-font-color: #000;
+$order-progress-bar: #C1C1C1;
+$order-progress-bar-green: #0D988C;
+$order-progress-bar-red: #E72A4F; 
+$order-progress-count-color: rgba(0, 0, 0, 0.87);
+$order-hr-color: #C1C1C1;
+$placed-order-bg-color: #fff;
+$placed-order-items-color: $order-progress-count-color;
+$placed-order-nutrients-color: rgba(0, 0, 0, 0.79);
+$placed-order-buttons-border-color: #898989;
+$placed-order-buttons-font-color: #fff;
+$disabled-button-bg-color: rgba(0, 0, 0, 0.16);
+$disabled-button-font-color: rgba(0, 0, 0, 0.38);
+$white-filter-bg-color: rgba(255, 255, 255, 0.7);
+$white-filter-font-color: #BFBFBF;
+$header-font-weight: 600;
+
+//Toaster colors
+$toaster-success-bg: #51A351;
+
+// DOM scrollBar colors
+
+$scrollber-thumb: #898989;
+$scrollbar-track: #efefef;
+
+// Modal
+$modal-meal-inc: #000;
+$modal-button-border-color: #aba8a8;
+$modal-primary-color: #fff;
+$modal-focus-color: $focus-active-color;

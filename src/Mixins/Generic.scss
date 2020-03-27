@@ -1,0 +1,37 @@
+@import '../Variables.scss';
+
+@mixin onFocus() {
+    background-color: $primary-color-active;
+    color: $primary-color;
+    border-color: $primary-color-active;
+}
+
+$colors: ("red": $primary, "orange": $orange, "blue": $blue);
+
+@mixin circle-variant($color, $name) {
+    background-color: $color;
+    animation: pulse-#{$name} 3s linear infinite;
+    box-shadow: 0 0 0 0 rgba($color, 0);
+    transform: scale(1);
+
+    @keyframes pulse-#{$name} {
+        0% {
+            transform: scale(.95);
+            box-shadow: 0 0 0 0 rgba($color, .7);
+        }
+
+        30% {
+            transform: scale(1);
+            box-shadow: 0 0 0 10px rgba($color, 0);
+        }
+
+        50% {
+            transform: scale(.95);
+            box-shadow: 0 0 0 0 rgba($color, 0);
+        }
+        100% {
+            transform: scale(.95);
+            box-shadow: 0 0 0 0 rgba($color, 0);
+        }
+    }
+}

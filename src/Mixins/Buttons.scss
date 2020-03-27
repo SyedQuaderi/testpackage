@@ -1,0 +1,32 @@
+@import '../Variables.scss';
+
+
+@mixin smallButtons () {
+    width: 157px;
+    height: 60px;
+    border-radius: 6px;
+    color: $focus-active-color;
+    background-color: $placed-order-bg-color;
+    border: 1px solid $placed-order-buttons-border-color;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+    text-align: center;
+}
+
+@mixin smallBtnFocus () {
+    background-color: $focus-active-color;
+    color: $placed-order-buttons-font-color;
+    border: 1px solid $placed-order-buttons-font-color;
+}
+
+@mixin disabledBtn {
+    border: none;
+    background-color: $disabled-button-bg-color;
+    font-weight: $header-font-weight;
+    color: $disabled-button-font-color;
+    font-size: 38px;
+    pointer-events: none;
+    box-shadow: none;
+}

@@ -1,0 +1,29 @@
+@import '../Variables.scss';
+
+@mixin modalButton () {
+    height: 151px;
+    width: 373px;
+    border: 1px solid $modal-focus-color;
+    background-color: $modal-focus-color;
+    font-size: 44px;
+    border-radius: 6px;
+    color: $modal-primary-color;
+}
+
+@mixin modalButtonFocus {
+    height: 151px;
+    width: 373px;
+    border: 1px solid $modal-button-border-color;
+    background-color: transparent;
+    font-size: 44px;
+    border-radius: 6px;
+    color: $modal-focus-color;
+    margin-left: -5px;
+}
+
+@mixin modalHeader($lineHeight, $margin) {
+    font-size: 54px;
+    margin-bottom: $margin;
+    font-weight: $header-font-weight;
+    line-height: $lineHeight;
+}

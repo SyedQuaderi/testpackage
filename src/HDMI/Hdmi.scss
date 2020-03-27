@@ -1,0 +1,123 @@
+
+@import '../Variables.scss';
+
+.hdmi-page-main {
+    text-align: center;
+    width: 100%;
+    height: $philips-tv-height + px;
+    background-size: contain;
+    margin-top: -24px;
+    .hdmi-main {
+        width: 100%; 
+        height: 100%; 
+        position: absolute; 
+        top: 0;
+        right: 0; 
+        z-index: -1;
+        .hdmi-object {
+            position: relative;
+            width:100%;
+            height:100%;
+        }
+    }
+    .hdmi-audio {
+        visibility: hidden;
+    }
+    #channelAudio, #channelVolume {
+        color: $volume-controler-color;
+        text-align: left;
+        font-size: 165px;
+    }
+    .hdmi-volume-control, .channel-volume-col {
+        padding: 0 !important;
+    }
+    .hdmi-volume-control svg{
+        font-size: 200px;
+        color: $volume-controler-color;
+    }
+    .hdmi-volume-controller-wrapper {
+        background-color: $volume-controler-bg-color;
+        margin-right: 46px;
+        padding: 0px 12px;
+    }
+    .volume-control {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1034;
+        bottom: 50px;
+        left: 43px;
+    }
+}
+.hdmi-submenu {
+    background-color: $home-page-menu-background-color;
+    height: 304px;
+    .slick-track {
+        width: 8728px !important;
+    }
+    .slick-slider {
+        margin: 8px auto 15px;
+        width: 300px;
+        transform: rotate(-90deg);
+        margin-top: -54px;
+        h3 {
+            width: 300px;
+            transform: rotate(90deg);
+            margin-top: 139px !important;
+            margin-left: -18px !important;
+        }
+        .slick-slide {
+            transform: skew(0deg);
+            border-top-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            #tv-menu-items {
+                width: 86%;
+                height: 400px;
+                background-color: $tv-menu-items-bg-color;
+                opacity: 0.8;
+                border-top-left-radius: 0px;
+                border-bottom-right-radius: 0px;
+                margin: 3px 3px 3px 12px;
+                color: transparent;
+            }
+        }
+    }
+    .tv-channel-name {
+        position: relative;
+        bottom: 234px;
+        text-align: center;
+    }
+    #hdmi-menu-items-main {
+        width: 400px;
+        height: 258px;
+        background-color: $tv-menu-items-bg-color;
+        opacity: 0.8;
+        border-top-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        margin: 20px 3px 3px 4px;
+        color: $tv-menu-items-color;
+    }
+    .hdmi-options-name {
+        margin-top: 3.5rem;
+    }
+   .hdmi-show-audio-flag {
+        display: block;
+        font-size: 25px;
+        font-weight: 600;
+    }
+   .hdmi-hide-audio-flag{
+        display: none;
+    }
+}
+
+.spinner-border {
+    left: 49%;
+}
+
+.hide-hdmi {
+    display: none;
+}
+
+html, body{overflow:hidden;}
+

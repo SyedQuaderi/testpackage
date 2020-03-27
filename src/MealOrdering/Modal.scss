@@ -1,0 +1,52 @@
+@import '../Variables.scss';
+@import '../Mixins/Modal.scss';
+
+.modal-dialog-main {
+    .modal-heading {
+        margin-top: 5%;
+        .modal-item-header {
+            @include modalHeader(1.3, 20px);
+        }
+        .modal-confirm-message {
+            font-size: 36px;
+        }
+        .modal-item-details {
+            font-size: 18px;
+        }
+    }
+    .modalFocus {
+        display: inline-flex;
+        position: relative;
+        top: 100px;
+    }
+    .modal-body-spacing {
+        margin-top: 5%;
+        .minus, .plus {
+            border: 1px solid $modal-meal-inc;
+            border-radius: 50%;
+            font-size: 150px;
+        }
+        .modal-item-count {
+            @include modalHeader(3.2, 0);
+        }
+    }
+    [tabindex="-1"]:focus {
+        img {
+            transform: scale(1.2);
+        }
+    }
+}
+.modal-close-button, .modal-save-button {
+    @include modalButtonFocus;
+}
+.modal-save-button {
+    margin-right: 70px;
+}
+.modalFocus [tabindex="-1"]:focus {
+    .modal-save-button {
+        @include modalButton;
+    }
+    .modal-close-button {
+        @include modalButton;
+    }
+}

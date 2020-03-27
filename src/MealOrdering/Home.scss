@@ -1,0 +1,223 @@
+@import '../Variables.scss';
+@import '../Mixins/Layout.scss';
+@import '../Mixins/Generic.scss';
+
+.meal-ordering-main-body {
+    @include mealOrderingHome;
+    .meal-ordering-home-icon {
+        color: $care-plan-icon-color;
+        padding-top: 50px;
+        svg {
+            font-size: 110px;
+            border: solid 3px $text-on-dark;
+            border-radius: 50%;
+            padding: 18px;
+            color: $care-plan-icon-color;
+        }
+    }
+    .meal-ordering-home-icon [tabindex="-1"]:focus {
+        transform: scale(1.1);
+        .care-plan-home-icon {
+            background-color: $care-plan-focus-color;
+        }
+        svg {
+            background-color: $care-plan-focus-color;
+            color: $primary-color;
+        }
+    }
+    .session-type {
+        color: $care-plan-icon-color;
+        margin-top: 10px;
+    }
+    .meal-sessions {
+        padding-top:10%;
+        .session-times {
+            margin-top: 40px;
+            padding-left: 20px;
+            width: 95%;
+            height: 175px;
+            background-color: $session-times-bg-color;
+            border-color: $session-times-border-color;
+            border-width: 1px;
+            border-radius: 10px;
+            font-size: 26px;
+            color: $mealorder-font-color;
+            box-shadow: 5px 5px 6px $session-item-box-shd;
+            .session-title {
+                font-size: 30px;
+    
+                .session-title-sub {
+                    font-family: 'Roboto-Light';
+                    color: $session-subtitle-color;
+                    font-size: 16px;
+                    min-height: 18px;
+                }
+            }
+            .session-timing {
+                margin-top: 20px;
+                font-family: 'Roboto-Light';
+                color: $session-time-color;
+                font-size: 20px;
+            }
+            .icon-container {
+                padding: 0px 10px;
+                display: table;
+                height: 80%;
+                .meal-course-image {
+                    display: table-cell;
+                    vertical-align: middle;
+                    img {
+                        width: 95%;
+                        height: 110px;
+                    }
+                }
+            }
+        }
+        .meal-session [tabindex="-1"]:focus {
+            .session-times {
+                box-shadow: 0px 1px 1px 3px $hp-menu-items-focus-color;
+            }
+            .removeFocus {
+                box-shadow: none;
+            }
+        }
+    }
+    .sessions-main {
+        height: 1080px;
+        background-color: $meal-session-panel-bg;
+        color: $text-on-dark;
+        padding: 75px 0 0 0;
+        margin-top: -32px;
+        .activity-button {
+            height: 120px;
+            width: 100%;
+            border-width: 0;
+            box-shadow: $session-act-box-shadow 2px 2px 5px;
+            font-size: 36px;
+            background-color: $session-act-bg-color;
+            color: $session-act-font-color;
+            overflow: hidden;
+            border-radius: 0;
+            .selection-arrow {
+                height: 25px;
+                width: 25px;
+                background-color: $care-plan-background-color;
+                transform: rotate(45deg);
+                float: right;
+                position: relative;
+                right: -56px;
+                top: 16px;
+            }
+            .selection-arrow-active {
+                background-color: $care-plan-arrow-color;
+            }
+            .selection-arrow-inactive {
+                background-color: $care-plan-background-color;
+            }
+        }
+        .activity-button-active {
+            @include onFocus;
+        }
+        .activity-button-inactive {
+            background-color: $sessions-font-color;
+            color: $text-on-light;
+        }
+        .btn {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: right;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border-radius: 0;
+            margin-bottom: 1px;
+            padding-right: 44px;
+        }
+        .section-btn-container .section-btn-wrapper .section-btn-container-image-content {
+            display: table-cell;
+            text-align: left;
+            vertical-align: middle;
+            left: 75px;
+            position: relative;
+        }
+    }
+    .session-button-container {
+        margin-top: 50px;
+        .session-button {
+            margin-top: 40px;
+            padding-top: 30px;
+            width: 100%;
+            height: 175px;
+            background-color: $session-btn-bg-color;
+            border-color: $session-btn-border-color;
+            border-width: 1px;
+            border-radius: 10px;
+            font-size: 26px;
+            color: $sessions-font-color;
+            box-shadow: 5px 5px 6px $session-btn-shadow-color;
+
+            .session-title {
+                font-size: 30px;
+                .session-title-sub {
+                    font-family: $font-family-Light;
+                    color: $session-subtitle-color;
+                    font-size: 16px;
+                    min-height: 18px;
+                }
+            }
+
+            .session-timing {
+                margin-top: 20px;
+                font-family: $font-family-Light;
+                color: $session-time-color;
+                font-size: 20px;
+            }
+
+            .icon-container {
+                padding: 0px 10px;
+                display: table;
+                height: 80%;
+                .meal-course-image {
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+    .meal-clock {
+        overflow: hidden;
+    }
+    .hide-mealOrdering {
+        display: none;
+    }
+    .circle {
+        width: 12px;
+        height: 12px;
+        border-radius: 100%;
+    }
+    .pulse {
+        @include circle-variant($indicator-color-core, "pulse");
+    }
+
+    .indicator {
+        position: relative;
+        top: -55px;
+        margin-right: -15px;
+        float: right;
+    }
+    @each $color, $value in $colors {
+        .circle-#{$color} {
+            @include circle-variant($value, $color);
+        }
+    }
+}

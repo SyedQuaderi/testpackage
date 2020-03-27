@@ -1,0 +1,626 @@
+@import '../Variables.scss';
+
+@mixin goalContent {
+    text-align: left;
+    padding: 5px 20px;
+    color: $font-color;
+    font-size: 22px;
+    background-color: rgb(39, 63, 72);
+    margin: 0;
+}
+
+@mixin mainContent {
+    height: 900px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+@mixin mainContentConfig {
+    text-align: center;
+    padding-top: 12px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow-y: hidden;
+    margin-top: -24px;
+}
+
+.care-plan-main-body {
+    @include mainContentConfig;
+    height: $care-plan-CockPitPro + px;
+}
+
+.hide-mycare-plan {
+    display: none;
+}
+
+.care-plan-home-icon {
+    border: solid 3px $care-plan-icon-color;
+    height: 100px;
+    width: 100px;
+    border-radius: 60px;
+    color: $care-plan-icon-color;
+    padding-top: 14px;
+}
+
+.breadcrumb [tabindex="-1"]:focus {
+    transform: scale(1.1);
+    .care-plan-home-icon {
+        background-color: $care-plan-focus-color;
+    }
+    svg {
+        color: $primary-color;
+    }
+}
+
+.breadcrumb-item+.breadcrumb-item:before {
+    display: inline-block;
+    padding-right: .5rem;
+    padding-top: 10px;
+    content: "  ";
+    font-weight: 600;
+}
+
+.breadcrumb {
+    background-color: $care-plan-background-color;
+}
+
+.breadcrumb-item {
+    font-size: 24px;
+    svg {
+        font-size: 60px; 
+        color: $care-plan-icon-color;
+    }
+    a {
+        color: $care-plan-icon-color;
+        font-weight: 600;
+    }
+    .care-plan-fa-icon {
+        font-size: 30px; 
+        color: $care-plan-icon-color;
+    }
+}
+
+.care-plan-main-content {
+    @include mainContent;
+}
+
+.goal-main-content {
+    @include mainContent;
+
+    .incomplete-goals, .complete-goal {
+        height: 312px;
+        display: block;
+        overflow-y: auto;
+    }
+    .completed-goal {
+        height: 390px;
+        overflow-y: auto;
+        display: block;
+    }
+}
+
+@mixin slide-animation($transform, $value: 0, $opacity: 0) {
+    transform: $transform($value);
+    opacity: $opacity;
+}
+
+@keyframes slide-down {
+    0% {
+        @include slide-animation(translateY, 0px, 0);
+    }
+    
+    50% {
+        @include slide-animation(translateY, 0px, 0.5);
+    }
+    
+    100% {
+        @include slide-animation(translateY, 0px, 1);
+    }
+}
+
+.goal-card-main {
+    animation: slide-down 1s linear;
+    [tabindex="-1"]:focus {
+        box-shadow: 0px 1px 1px 3px $font-color;
+        border-radius: none !important;
+    }
+}
+
+
+.care-plan-font-settings {
+    color: $font-color;
+}
+
+.activity-button {
+    height: 120px;
+    width: 100%;
+    border-width: 0;
+    box-shadow: rgba(0,0,0,.7) 2px 2px 5px;
+    font-size: 36px;
+    background-color: rgba(255,255,255,.7);
+    color: #212121;
+    overflow: hidden;
+    border-radius: 0;
+   
+
+    .selection-arrow {
+        height: 25px;
+        width: 25px;
+        background-color: $care-plan-background-color;
+        transform: rotate(45deg);
+        float: right;
+        position: relative;
+        right: -56px;
+        top: 16px;
+    }
+
+    .selection-arrow-active {
+        background-color: $care-plan-arrow-color;
+    }
+
+    .selection-arrow-inactive {
+        background-color: $care-plan-background-color;
+    }
+
+
+    &:hover {
+        background-color: lighten($primary-color-active, 5%) !important;
+        color: $primary-color;
+        box-shadow: rgba(0, 0, 0, 0.5) 3px 3px 7px;
+        cursor: pointer;
+    }
+}
+
+.activity-button-active {
+    background-color: $primary-color-active;
+    color: $primary-color;
+    border-color: $primary-color-active;
+}
+
+.activity-button-inactive {
+    background-color: rgba(59, 57, 57, 0.65);
+    color: $font-color;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: right;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border-radius: 0;
+    margin-bottom: 1px;
+    padding-right: 44px;
+}
+
+.section-btn-container .section-btn-wrapper .section-btn-container-image-content {
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+    left: 75px;
+    position: relative;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.card {
+    background-color: rgba(59,57,57,.65);
+    color: $care-plan-font-color;
+    width: 80%;
+    height: 398px;
+
+    .card-toggle{
+        position: absolute;
+        background-color: rgb(38, 69, 81);
+        height: 398px;
+        width: 100%;
+        z-index: 100;
+        padding-top: 161px;
+    }
+}
+
+.card-img-top {
+    height: 200px;
+}
+
+.card-deck {
+    display: table;
+    background-color: $care-pan-activity-card-bg;
+    padding: 10px;
+    height: 110px;
+    width: 110px;
+    border-radius: 55px;
+    margin: auto;
+    top: 55px;
+    float: left;
+    position: relative;
+    text-align: center;
+    font-size: 18px;
+    color: $care-plan-activity-card-font-color;
+
+    .care-plan-status {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 1px;
+        font-size: 18px;
+    }
+}
+
+.goals-count, .goals-motive, .completed-goals {
+    color: $primary-color;
+    
+}
+
+.completed-goals {
+    overflow-y: auto;
+}
+
+.add-new-goals {
+    padding: 20px 25px;
+    font-size: 20px;
+}
+
+.card-footer {
+    height: 85px;
+}
+
+.goals-main {
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: transparent;
+
+    
+    .goals-title {
+        @include goalContent;
+        margin-bottom: 0;
+        border-bottom: solid $care-plan-goals-border-color;
+    }
+
+    .goals-description {
+        @include goalContent;
+        border-top: solid $care-plan-goals-border-color;
+    }
+    .goals-complete {
+        padding: 30px 5px;
+        background-color: $care-plan-goals-bg-color;
+        border-left: solid $care-plan-goals-border-color; 
+    }
+    svg {
+        position: absolute;
+        right: 29px;
+        font-size: 65px;
+        top: 10px;
+        color: $font-color;
+        cursor: pointer;
+    }
+}
+
+.spinner-border {
+    position: absolute;
+    top: 38%;
+    width: 3rem;
+    height: 3rem;
+}
+
+
+//Modal CSS changes
+
+.modal-dialog {
+    margin-top:6%;
+    max-width: 900px;
+    .modal-content {
+        height: 500px;
+        #goalTitle, #goalDescription {
+            border-radius: 0px;
+            border: 1px solid $care-plan-arrow-color;
+            font-size: 18px;
+        }
+        .modal-footer {
+            border-top: 0;
+        }
+        .modal-title {
+            font-size: 26px;
+        }
+        .goal-intro {
+            font-size: 20px;
+        }
+        .form-label {
+            font-size: 19px;
+        }
+        .cancel-goal, .save-goal {
+            font-size: 20px;
+            width: 130px;
+            height: 60px;
+            background: $primary-color;
+            color: $primary-color-active;
+            border: 2px solid $primary-color-active;
+            padding: 0px;
+            text-align: center;
+        }
+    }
+}
+
+
+
+
+// Media Queries BreakPoints 
+
+$CockpitIP12: 1300px; 
+$CockpitIP18: 1599px;
+$CockpitPro: 1919px;
+
+@media  (min-width: $CockpitIP12) and (max-width: $CockpitIP18) {
+    .care-plan-main-body {
+        @include mainContentConfig;
+        height: $care-plan-Cockpit12-height + px;
+    }
+
+    .care-plan-home-icon {
+        height: 80px;
+        width: 80px;
+        padding-top: 9px;
+    }
+    .breadcrumb-item {
+        svg {
+            font-size: 50px;
+        }
+        .care-plan-fa-icon {
+            font-size: 24px;
+        }
+        a {
+            font-size: 18px;
+        }
+    }
+    
+    .care-plan-font-settings {
+        font-size: 22px;
+        margin-top: 10px;
+    }
+    .activity-button {
+        font-size: 24px;
+        .selection-arrow {
+            height: 21px;
+            width: 21px;
+            top: 7px;
+        }
+    }
+    .btn {
+        height: 74px;
+    }
+    .care-plan-main-content {
+        padding-top: 0 !important;
+        height: 636px;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        .card-main {
+            margin-bottom: 15px;
+
+            .card {
+                height: 200px;
+                border: 0;
+                width: 175px;
+
+                .card-toggle{
+                    position: absolute;
+                    background-color: rgb(38, 69, 81);
+                    height: 234px;
+                    width: 100%;
+                    z-index: 100;
+                    padding-top: 95px;
+                }
+
+                .card-body {
+                    padding: 10px 0;
+
+                    .card-title {
+                        font-size: 16px;
+                        padding-top: 10px !important;
+                    }
+                }
+                .card-deck {
+                    height: 90px;
+                    width: 90px;
+                    z-index: 99;
+                    text-align: center;
+                    top: 0;
+                    .care-plan-status {
+                        padding: 1px;
+                        font-size: 14px;
+                    }
+                }
+                .card-footer {
+                    bottom: -32px;
+                    position: absolute;
+                    height: 61px;
+                    left: 0px; 
+                    width: 175px;
+                    margin-bottom: -2px;
+                }
+            }
+        }
+    }
+    .goals-count, .goals-motive, .completed-goals {
+        color: $primary-color;
+        font-size: 18px;
+    }
+    .goal-main-content {
+        height: $care-plan-Cockpit12-height + px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    
+        .incomplete-goals {
+            height: 228px;
+            display: block;
+        }
+        .complete-goal {
+            height: 215px;
+        }
+    }    
+
+    .goals-main {
+
+        .goals-description, .goals-title {
+            @include goalContent;
+            padding: 1px 20px 2px 20px;
+            font-size: 17px;
+        }
+        svg {
+            position: absolute;
+            right: 25px;
+            font-size: 40px;
+            top: 10px;
+            color: $font-color;
+            cursor: pointer;
+        }
+    }
+    .add-new-goals {
+        padding: 10px 16px;
+        font-size: 18px;
+        height: 55px !important;
+        margin-bottom: 1px;
+    }
+}
+
+@media  (min-width: $CockpitIP18) and (max-width: $CockpitPro) {
+    .care-plan-main-body {
+        @include mainContentConfig;
+        height: $care-plan-Cockpit18-height + px;
+    }
+    .care-plan-home-icon {
+        height: 90px;
+        width: 90px;
+        padding-top: 9px;
+    }
+    .breadcrumb-item {
+        svg {
+            font-size: 55px;
+        }
+        .care-plan-fa-icon {
+            font-size: 26px;
+        }
+        a {
+            font-size: 20px;
+        }
+    }
+    
+    .care-plan-font-settings {
+        font-size: 24px;
+        margin-top: 9px;
+    }
+    .activity-button {
+        font-size: 24px;
+        .selection-arrow {
+            height: 24px;
+            width: 24px;
+            top: 7px;
+        }
+    }
+    .btn {
+        height: 100px;
+    }
+    .care-plan-main-content {
+        padding-top: 0 !important;
+        height: 755px;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        .card-main {
+            margin-bottom: 20px;
+
+            .card {
+                height: 260px;
+                border: 0;
+                width: 220px;
+
+                .card-toggle{
+                    position: absolute;
+                    background-color: rgb(38, 69, 81);
+                    height: 294px;
+                    width: 100%;
+                    padding-top: 120px;
+                }
+
+                .card-body {
+                    padding: 10px 0;
+
+                    .card-title {
+                        font-size: 16px;
+                        padding: 0;
+                    }
+                }
+                .card-deck {
+                    height: 90px;
+                    width: 90px;
+                    z-index: 99;
+                    text-align: center;
+                    top: 10px;
+                    .care-plan-status {
+                        padding: 1px;
+                        font-size: 14px;
+                    }
+                }
+                .card-footer {
+                    bottom: -32px;
+                    position: absolute;
+                    height: 61px;
+                    left: 0px; 
+                    width: 220px;
+                    margin-bottom: -2px;
+                }
+            }
+        }
+    }
+    .goals-count, .goals-motive, .completed-goals {
+        color: $primary-color;
+        font-size: 22px;
+    }
+    .goal-main-content {
+        height: $care-plan-Cockpit18-height + px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    
+        .incomplete-goals {
+            height: 250px;
+            display: block;
+        }
+    }    
+
+    .goals-main {
+
+        .goals-description, .goals-title {
+            @include goalContent;
+            padding: 3px 20px;
+            font-size: 18px;            
+        }
+        svg {
+            position: absolute;
+            right: 29px;
+            font-size: 48px;
+            top: 10px;
+            color: $font-color;
+            cursor: pointer;
+        }
+    }
+    .add-new-goals {
+        padding: 20px 16px;
+        font-size: 18px;
+        height: 70px !important;
+        margin-bottom: 2px;
+    }
+}
