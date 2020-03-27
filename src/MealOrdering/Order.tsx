@@ -162,7 +162,7 @@ function Order(props) {
     //var [scrollTopElement, scrollBottom]:any = [document.getElementById('section02'), document.getElementById('section01')];
     const scrollItems:any = (document.getElementsByClassName('scrollitems') as HTMLCollectionOf<Element>);
     
-    useEffect(()=>{
+    /* useEffect(()=>{
         const scrollTopElement:any = document.getElementById('section02') as unknown as HTMLCollectionOf<Element>;
         const scrollBottom:any = document.getElementById('section01') as unknown as HTMLCollectionOf<Element>;
         function scrollEvent(){
@@ -195,7 +195,7 @@ function Order(props) {
             window.removeEventListener("scroll", scrollEvent, true);
         };
     });
-
+ */
     function scrollToBottom() {
         const scrollTopElement:any = document.getElementById('section02') as unknown as HTMLCollectionOf<Element>;
         const scrollBottom:any = document.getElementById('section01') as unknown as HTMLCollectionOf<Element>;
@@ -414,7 +414,7 @@ function Order(props) {
                             <Col sm={12} className="order-panel">
                                 <Row className="">
                                     <MenuItems meals={meals} setIsModalOpens={setIsModalOpens}
-                                             Focusable={Focusable} Row={Row} Col={Col} Button={Button} 
+                                             Row={Row} Col={Col} Button={Button} 
                                              scrollToBottom={scrollToBottom} scrollToTop={scrollToTop}
                                              removeFocusFromIcon={removeFocusFromIcon}/>
                                     <Col sm={5} className="order-summary full-fixed-height">

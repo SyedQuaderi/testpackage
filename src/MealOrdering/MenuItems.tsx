@@ -1,5 +1,6 @@
 import React from 'react';
 import PES from '../globalVariables';
+import SpatialNavigation, {FocusableSection, Focusable } from 'react-js-spatial-navigation';
 
 function MenuItems(props) {
     const Arrow = PES.PESLiteImages.downArrow;
@@ -9,7 +10,7 @@ function MenuItems(props) {
                 <a href="#section02"><img src={Arrow}/></a>
             </div>
             {props.meals.mealItems.map((mealItem, i)=>
-            <props.Focusable className="active" key={i} onFocus={() => props.removeFocusFromIcon(mealItem)} onClickEnter={() => props.setIsModalOpens(mealItem)}>
+            <Focusable className="active" key={i} onFocus={() => props.removeFocusFromIcon(mealItem)} onClickEnter={() => props.setIsModalOpens(mealItem)}>
                 <props.Button onClick={() => props.setIsModalOpens(mealItem)} className="item-btn">
                     <props.Row>
                         <props.Col sm={5}>
@@ -37,7 +38,7 @@ function MenuItems(props) {
                         </props.Col>
                     </props.Row>
                 </props.Button>
-            </props.Focusable>
+            </Focusable>
             )}
             <div id="section01" className="scrollToBottom">
                 <a href="#section01" onClick={()=>props.scrollToBottom()}><img src={Arrow}/></a>
