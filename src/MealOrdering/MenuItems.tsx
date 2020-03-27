@@ -10,7 +10,7 @@ function MenuItems(props) {
             </div>
             {props.meals.mealItems.map((mealItem, i)=>
             <props.Focusable className="active" key={i} onFocus={() => props.removeFocusFromIcon(mealItem)} onClickEnter={() => props.setIsModalOpens(mealItem)}>
-                <props.Button  className="item-btn">
+                <props.Button onClick={() => props.setIsModalOpens(mealItem)} className="item-btn">
                     <props.Row>
                         <props.Col sm={5}>
                             <img src={mealItem.image}/>

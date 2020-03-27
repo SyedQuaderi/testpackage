@@ -32,7 +32,7 @@ function AvailableMenu(props) {
                     {props.mealMain.mealCategory.map((item, i)=>
                         <props.Col xs={12} key={i} className="meal-type remove-gutter">
                             <props.Focusable onUnfocus={()=>{props.selectSubMealType(item)}} onFocus={()=>{props.selectMealType(item)}}>
-                                <props.Button  className={"menu-category-btn" + (item.id === props.focusOnMenuItem && !props.flag ? " activity-button-active " : " activity-button-inactive")}>
+                                <props.Button  onClick={()=>{props.selectMealType(item)}} className={"menu-category-btn" + (item.id === props.focusOnMenuItem && !props.flag ? " activity-button-active " : " activity-button-inactive")}>
                                     <props.Row>
                                         <props.Col className="text-center" >
                                             <div className="">

@@ -160,11 +160,11 @@ function Order(props) {
     }, [storeMeal]);
     
     //var [scrollTopElement, scrollBottom]:any = [document.getElementById('section02'), document.getElementById('section01')];
-    const scrollTopElement:any = document.getElementById('section02') as unknown as HTMLCollectionOf<Element>;
-    const scrollBottom:any = document.getElementById('section01') as unknown as HTMLCollectionOf<Element>;
     const scrollItems:any = (document.getElementsByClassName('scrollitems') as HTMLCollectionOf<Element>);
     
     useEffect(()=>{
+        const scrollTopElement:any = document.getElementById('section02') as unknown as HTMLCollectionOf<Element>;
+        const scrollBottom:any = document.getElementById('section01') as unknown as HTMLCollectionOf<Element>;
         function scrollEvent(){
             let insideScroll:number = 0;
             for (var i=1; i <= scrollItems[0].children.length -2; i++) {
@@ -194,9 +194,11 @@ function Order(props) {
         return () => {
             window.removeEventListener("scroll", scrollEvent, true);
         };
-    }, [scrollTopElement!== null]);
+    });
 
     function scrollToBottom() {
+        const scrollTopElement:any = document.getElementById('section02') as unknown as HTMLCollectionOf<Element>;
+        const scrollBottom:any = document.getElementById('section01') as unknown as HTMLCollectionOf<Element>;
         scrollItems[0].scrollTo({
             'behavior': 'smooth',
             'left': 0,
@@ -208,6 +210,8 @@ function Order(props) {
     }
 
     function scrollToTop() {
+        const scrollTopElement:any = document.getElementById('section02') as unknown as HTMLCollectionOf<Element>;
+        const scrollBottom:any = document.getElementById('section01') as unknown as HTMLCollectionOf<Element>;
         scrollItems[0].scrollTo({
             'behavior': 'smooth',
             'left': 0,
@@ -390,7 +394,7 @@ function Order(props) {
                         <Col xs lg="1" className="full-fixed-height">
                             <div className="meal-ordering-home-icon text-center">
                                 <Focusable onClickEnter={()=>goToHome(false, orderedList)} >
-                                    <FaChevronLeft />
+                                    <FaChevronLeft onClick={()=>goToHome(false, orderedList)}/>
                                 </Focusable>
                             </div>
                             <h3 className="session-type">Back</h3>
@@ -558,7 +562,7 @@ function Order(props) {
                                         <Row>
                                             <Col sm={10} className="item-place-order">
                                                 <Focusable onClickEnter={()=>goToHome(true, props.mealMain)} >
-                                                    <Button className={"item-order-button " + (orderedMenuItemsLength ? "" : "btn-disabled")} disabled={orderedMenuItemsLength ? false : true}>Place</Button>
+                                                    <Button onClick={()=>goToHome(true, props.mealMain)} className={"item-order-button " + (orderedMenuItemsLength ? "" : "btn-disabled")} disabled={orderedMenuItemsLength ? false : true}>Place</Button>
                                                 </Focusable>
                                             </Col>
                                         </Row>
