@@ -96,7 +96,7 @@ function Order(props) {
             
             for(var i=0; i < avaialbleMenu.length; i++) {
                 const removeFocusFromMenu = avaialbleMenu[i].children[0];
-                removeFocusFromMenu.classList.value = removeFocusFromMenu.classList.value.substring(7);
+                //removeFocusFromMenu.classList.value = removeFocusFromMenu.classList.value.substring(7);
             }
             const removeFocuFromPlaceOrderBtn: HTMLCollectionOf<any> = document.getElementsByClassName("item-place-order")[0].children;
             removeFocuFromPlaceOrderBtn[0].classList.remove('focusable');
@@ -112,7 +112,7 @@ function Order(props) {
         }
         for(var i=0; i < avaialbleMenu.length; i++) {
             const addFocusFromMenu = avaialbleMenu[i].children[0];
-            addFocusFromMenu.classList.value = 'section'+ addFocusFromMenu.classList.value;
+            //addFocusFromMenu.classList.value = 'section'+ addFocusFromMenu.classList.value;
         }
         removeFocusFromBack[0].classList.add('focusable');
         const addFocusBackPlaceOrderBtn: HTMLCollectionOf<any> = document.getElementsByClassName("item-place-order")[0].children;

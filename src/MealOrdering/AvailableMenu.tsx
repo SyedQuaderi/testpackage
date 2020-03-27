@@ -27,7 +27,7 @@ function AvailableMenu(props) {
 
     return (
         <props.Col sm={3} className="full-fixed-height white-filter meal-type-wrapper">
-            <props.FocusableSection enterTo={'last-focused'}>
+            
                 <props.Row>
                     {props.mealMain.mealCategory.map((item, i)=>
                         <props.Col xs={12} key={i} className="meal-type remove-gutter">
@@ -50,7 +50,7 @@ function AvailableMenu(props) {
                         </props.Col>
                     )}
                 </props.Row>
-            </props.FocusableSection>
+            
         </props.Col>
     )
 }
