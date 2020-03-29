@@ -16,7 +16,7 @@
 .meal-ordering-Order-body {
     @include mainOrderContent;
     height: $care-plan-CockPitPro + px;
-    .meal-ordering-home-icon {
+    .meal-ordering-order-icon {
         color: $care-plan-icon-color;
         padding-top: 50px;
         svg {

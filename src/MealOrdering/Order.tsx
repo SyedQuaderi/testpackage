@@ -76,8 +76,9 @@ function Order(props) {
         setIsModalOpen(true);
     }
     const avaialbleMenu: HTMLCollectionOf<any> = document.getElementsByClassName("meal-type");
-    const removeFocusFromBack:HTMLCollectionOf<any> = document.getElementsByClassName("meal-ordering-home-icon")[0].children;
     useEffect(() => {
+        //const removeFocusFromBack:any = (document.getElementsByClassName("meal-ordering-order-icon")[0].children[0] as unknown as HTMLCollectionOf<HTMLElement>);
+        //console.log("removeFocusFromBack",removeFocusFromBack);
         if(isModalOpen) {
             const selectMenuItem: HTMLCollectionOf<any> = document.getElementsByClassName("scrollitems")[0].children;
             if(modalButtonName) {
@@ -96,11 +97,11 @@ function Order(props) {
             
             for(var i=0; i < avaialbleMenu.length; i++) {
                 const removeFocusFromMenu = avaialbleMenu[i].children[0];
-                //removeFocusFromMenu.classList.value = removeFocusFromMenu.classList.value.substring(7);
+                removeFocusFromMenu.classList.value = removeFocusFromMenu.classList.value.substring(7);
             }
             const removeFocuFromPlaceOrderBtn: HTMLCollectionOf<any> = document.getElementsByClassName("item-place-order")[0].children;
             removeFocuFromPlaceOrderBtn[0].classList.remove('focusable');
-            removeFocusFromBack[0].classList.remove('focusable');
+            //removeFocusFromBack[0].classList.remove('focusable');
         }
     }, [isModalOpen])
     
@@ -112,9 +113,9 @@ function Order(props) {
         }
         for(var i=0; i < avaialbleMenu.length; i++) {
             const addFocusFromMenu = avaialbleMenu[i].children[0];
-            //addFocusFromMenu.classList.value = 'section'+ addFocusFromMenu.classList.value;
+            addFocusFromMenu.classList.value = 'section'+ addFocusFromMenu.classList.value;
         }
-        removeFocusFromBack[0].classList.add('focusable');
+        //removeFocusFromBack[0].classList.add('focusable');
         const addFocusBackPlaceOrderBtn: HTMLCollectionOf<any> = document.getElementsByClassName("item-place-order")[0].children;
         addFocusBackPlaceOrderBtn[0].classList.add('focusable');
         if(menuItemFocus.current !== null || menuItemFocus.current !== undefined) {
@@ -160,11 +161,11 @@ function Order(props) {
     }, [storeMeal]);
     
     //var [scrollTopElement, scrollBottom]:any = [document.getElementById('section02'), document.getElementById('section01')];
+    const scrollTopElement:any = document.getElementById('section02') as unknown as HTMLCollectionOf<Element>;
+    const scrollBottom:any = document.getElementById('section01') as unknown as HTMLCollectionOf<Element>;
     const scrollItems:any = (document.getElementsByClassName('scrollitems') as HTMLCollectionOf<Element>);
     
-    /* useEffect(()=>{
-        const scrollTopElement:any = document.getElementById('section02') as unknown as HTMLCollectionOf<Element>;
-        const scrollBottom:any = document.getElementById('section01') as unknown as HTMLCollectionOf<Element>;
+    useEffect(()=>{
         function scrollEvent(){
             let insideScroll:number = 0;
             for (var i=1; i <= scrollItems[0].children.length -2; i++) {
@@ -194,11 +195,9 @@ function Order(props) {
         return () => {
             window.removeEventListener("scroll", scrollEvent, true);
         };
-    });
- */
+    }, [scrollTopElement!== null]);
+
     function scrollToBottom() {
-        const scrollTopElement:any = document.getElementById('section02') as unknown as HTMLCollectionOf<Element>;
-        const scrollBottom:any = document.getElementById('section01') as unknown as HTMLCollectionOf<Element>;
         scrollItems[0].scrollTo({
             'behavior': 'smooth',
             'left': 0,
@@ -210,8 +209,6 @@ function Order(props) {
     }
 
     function scrollToTop() {
-        const scrollTopElement:any = document.getElementById('section02') as unknown as HTMLCollectionOf<Element>;
-        const scrollBottom:any = document.getElementById('section01') as unknown as HTMLCollectionOf<Element>;
         scrollItems[0].scrollTo({
             'behavior': 'smooth',
             'left': 0,
@@ -317,12 +314,13 @@ function Order(props) {
             setOrderButtons(0);
         }
     }
-    var backIcon:any = document.getElementsByClassName('meal-ordering-home-icon')[0].children[0];
+
     function selectMealType(mealType) {
+        //const backIcon:any = document.getElementsByClassName('meal-ordering-order-icon')[0].children[0];
         setMealItems({mealItems: mealType.mealItems});
         setfocusOnMenuItem(mealType.id);
         setFlag(false);
-        backIcon.classList.add('focusable');
+        //backIcon.classList.add('focusable');
         const arrowDown: any  = document.getElementById('section01');
         if(mealType.mealItems.length <= 5) {
             arrowDown.style.display = "none";
@@ -336,7 +334,8 @@ function Order(props) {
     }
 
     function removeFocusFromIcon(menuItem) {
-        backIcon.classList.remove('focusable');
+        //const backIcon:any = document.getElementsByClassName('meal-ordering-order-icon')[0].children[0];
+        //backIcon.classList.remove('focusable');
     }
 
     function selectSubMealType (subMealType) {
@@ -392,7 +391,7 @@ function Order(props) {
                 <SpatialNavigation>
                     <Row>
                         <Col xs lg="1" className="full-fixed-height">
-                            <div className="meal-ordering-home-icon text-center">
+                            <div className="meal-ordering-order-icon text-center">
                                 <Focusable onClickEnter={()=>goToHome(false, orderedList)} >
                                     <FaChevronLeft onClick={()=>goToHome(false, orderedList)}/>
                                 </Focusable>
@@ -414,7 +413,7 @@ function Order(props) {
                             <Col sm={12} className="order-panel">
                                 <Row className="">
                                     <MenuItems meals={meals} setIsModalOpens={setIsModalOpens}
-                                             Row={Row} Col={Col} Button={Button} 
+                                             Focusable={Focusable} Row={Row} Col={Col} Button={Button} 
                                              scrollToBottom={scrollToBottom} scrollToTop={scrollToTop}
                                              removeFocusFromIcon={removeFocusFromIcon}/>
                                     <Col sm={5} className="order-summary full-fixed-height">
